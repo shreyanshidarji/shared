@@ -1,0 +1,60 @@
+﻿@model OLXProject.Models.AdvertiseImagesModel
+
+@{
+    ViewBag.Title = "UploadImage";
+}
+
+<h2>UploadImage</h2>
+
+@using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+      
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+     @*<div class="form-group">
+                @Html.labelfor(model => model.advertiseimageid, htmlattributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.editorfor(model => model.advertiseimageid, new { htmlattributes = new { @class = "form-control" } })
+                    @Html.validationmessagefor(model => model.advertiseimageid, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.advertiseId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.advertiseId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.advertiseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Select an image:")
+            <input type="file" name="file" accept="image/*" multiple="multiple" required  />
+        </div>
+
+        @Html.Hidden("advertiseId", Model)
+
+        <div class="form-group">
+            <input type="submit" value="Upload" class="btn btn-primary" />
+        </div>
+       
+
+        <div>
+            @TempData["SuccessMessage"]
+            @TempData["ErrorMessage"]
+        </div>
+
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

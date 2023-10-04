@@ -1,0 +1,126 @@
+﻿@model IEnumerable<OLXProject.Models.MyAdvertiseModel>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imageData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productSubCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertisePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.areaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseapproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.advertiseId)
+    </td>
+    <td>
+
+        @if (item.imageData != null && item.imageData.Length > 0)
+        {
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.imageData)" alt="Ad Image" style="max-width:150px; max-height: 150px;" />
+
+        }
+
+        else if (item.ImageData1 != null && item.ImageData1.Length > 0)
+        {
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.ImageData1)" alt="Ad Image" style="max-width:150px; max-height: 150px;" />
+        }
+        else if (item.ImageData2 != null && item.ImageData2.Length > 0)
+        {
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.ImageData2)" alt="Ad Image" style="max-width:150px; max-height: 150px;" />
+        }
+        else if (item.ImageData3 != null && item.ImageData3.Length > 0)
+        {
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.ImageData3)" alt="Ad Image" style="max-width:150px; max-height: 150px;" />
+        }
+        else
+        {
+            <span>No Image</span>
+        }
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.productSubCategoryName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.advertiseTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.advertiseDescription)
+    </td>
+  
+    <td>
+        @item.advertisePrice.ToString("0.00")
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.areaId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.advertiseStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.userId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.advertiseapproved)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.createdOn)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.updatedOn)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+}
+
+</table>

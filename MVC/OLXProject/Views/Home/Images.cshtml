@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OLXProject.Models.AdvertiseImagesModel>
+
+@{
+    ViewBag.Title = "Images";
+}
+
+<h2>Images</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imageData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+   
+    <td>
+        @Html.DisplayFor(modelItem => item.advertiseId)
+    </td>
+    <td>
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.imageData)" alt="Image" width="100" height="100" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.createdOn)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.updatedOn)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+}
+
+</table>

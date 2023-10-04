@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Shield UI Demos</title>
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+</head>
+<body class="theme-light">
+<link href="/Content/css/ListBox/FlagsAll.css" rel="stylesheet" type="text/css" />
+<div><br /><br /></div>
+
+  
+    <div class="outer" >
+        <div>   <p align="left">
+                    <b> CHOOSE A CATEGORY</b>
+</p></div><br />
+        <ul id="mymenu">
+            <li data-href="#products">
+                <p>Bikes</p>
+                <ul>
+                    <li data-href="#clothes">
+                        <p>Motorcycles</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Scooters</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Spare parts</p>
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Bicycles</p>
+                    </li>
+                </ul>
+            </li>
+            <li data-href="#products">
+                <p>Electronics & Appliancese</p>
+                <ul>
+                    <li data-href="#clothes">
+                        <p>Fridges</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Computer Accessories</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>AC</p>
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Camera</p>
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Washing Matchine</p>
+                    </li>
+                </ul>
+            </li>
+            <li data-href="#products">
+                <p>Furniture</p>
+                <ul>
+                    <li data-href="#clothes">
+                        <p>Sofa & Dining</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Beds & Wordrobes</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Home Decor</p>
+                    </li>
+                </ul>
+            </li>
+            <li data-href="#products">
+                <p>Fashion</p>
+                <ul>
+                    <li data-href="#clothes">
+                        <p>Men</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Women</p>
+
+                    </li>
+                    <li data-href="#shoes">
+                        <p>Kids</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+
+
+
+            </li>
+        </ul>
+    </div>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#mymenu").shieldMenu({
+            cls: "mymenu",
+            orientation: "vertical"
+        });
+    });
+</script>
+<style>
+    .outer {
+        margin: auto;
+        max-width: 600px;
+        min-height: 100px;
+    }
+    .mymenu {
+        width: 200px;
+    }
+    .megamenu:hover,
+    .megamenu.sui-menu-item-selected {
+        background-color: transparent;
+        color: inherit;
+    }
+    .megamenu .flag {
+        display: inline-block;
+    }
+    .megamenu .mmlink {
+        color: rgb(53, 53, 196);
+        text-decoration: underline;
+    }
+    .megamenu-inner {
+        width: 200px;
+    }
+   
+   
+</style>
+</body>
+</html>

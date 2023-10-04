@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Shield UI Demos</title>
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+</head>
+<body class="theme-light">
+    <link href="/Content/css/ListBox/FlagsAll.css" rel="stylesheet" type="text/css" />
+    <div><br /><br /></div>
+
+
+    <div class="outer">
+        
+
+            <div>
+                <p align="left">
+                    <h2><b> Selected Category</b></h2>
+                </p>
+            </div><br />
+
+            <div>
+                <span class="category">Fashion</span>
+                <span class="separator">/</span>
+                <span class="category">Women</span>
+            </div><br />
+
+            <div class="_2J38C"></div>
+            <div>
+                <h3><b> Include Some Details</b></h3>
+                <label for=" title">Ad title*</label>
+                <div>
+                    <input id="title" name="title" type="text" autocomplete="off" class="rui-2brBP rui-cXknh undefined" maxlength="70" value="">
+                </div>
+                <div>
+                    <span class="rui-IlMwo rui-DTzlG" data-aut-id="">Mention the key features of your item (e.g. brand, model, age, type)</span>
+                </div>
+            </div>
+            
+   
+    </div>
+
+    <script type="text/javascript">
+    jQuery(function ($) {
+        $("#mymenu").shieldMenu({
+            cls: "mymenu",
+            orientation: "vertical"
+        });
+    });
+    </script>
+    <style>
+        ._2J38C {
+            box-sizing: border-box;
+            border-bottom: 1px solid; 
+            float: left;
+            height: 0;
+            width: 100%;
+        }
+        .outer {
+            margin: auto;
+            max-width: 600px;
+            min-height: 100px;
+        }
+
+        .mymenu {
+            width: 200px;
+        }
+
+        .megamenu:hover,
+        .megamenu.sui-menu-item-selected {
+            background-color: transparent;
+            color: inherit;
+        }
+
+        .megamenu .flag {
+            display: inline-block;
+        }
+
+        .megamenu .mmlink {
+            color: rgb(53, 53, 196);
+            text-decoration: underline;
+        }
+
+        .megamenu-inner {
+            width: 200px;
+        }
+        .category {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .separator {
+            color: #999;
+            margin: 0 5px; /* Add spacing between the slashes */
+        }
+    </style>
+</body>
+</html>
